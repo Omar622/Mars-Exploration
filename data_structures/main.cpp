@@ -31,7 +31,5 @@ int main(){
 	v.clear();
 	print(v);
 
-
-
 	return 0;
 }

@@ -18,12 +18,11 @@ vector<t>::vector(int n, t val):vector(n){
 }
 
 template<class t>
-vector<t>::vector(vector<t>& old):
-	vector(old.size()){
-		for(int i = 0; i < old.size(); ++i){
-			arr[i] = old[i];
-		}
+vector<t>::vector(vector<t>& old):vector(old.size()){
+	for(int i = 0; i < old.size(); ++i){
+		arr[i] = old[i];
 	}
+}
 
 template<class t>
 vector<t>::~vector(){
@@ -57,7 +56,7 @@ void vector<t>::pop_back(){
 	if(siz){
 		--siz;
 	}else{
-		// invalid case
+		std::cerr << "Trying pop_back while vector is empty\n";
 	}
 }
 
@@ -66,8 +65,8 @@ t& vector<t>::operator[](int idx){
 	if(idx < siz){
 		return arr[idx];
 	}else{
-// invalid case
-		int tmp = -1;
+		std::cerr << "Trying accessing negative index in vector\n";
+		int tmp = 0;
 		return tmp;
 	}
 }
@@ -77,8 +76,8 @@ t vector<t>::back(){
 	if(siz){
 		return arr[siz-1];
 	}else{
-		// invalid case
-		return -1;
+		std::cerr << "Trying accessing back while vector is empty\n";
+		return 0;
 	}
 }
 
