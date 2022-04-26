@@ -57,6 +57,7 @@ void vector<t>::pop_back(){
 		--siz;
 	}else{
 		std::cerr << "Trying pop_back while vector is empty\n";
+		exit(0);
 	}
 }
 
@@ -66,18 +67,17 @@ t& vector<t>::operator[](int idx){
 		return arr[idx];
 	}else{
 		std::cerr << "Trying accessing negative index in vector\n";
-		int tmp = 0;
-		return tmp;
+		exit(0);
 	}
 }
 
 template<class t>
-t vector<t>::back(){
+t& vector<t>::back(){
 	if(siz){
 		return arr[siz-1];
 	}else{
 		std::cerr << "Trying accessing back while vector is empty\n";
-		return 0;
+		exit(0);
 	}
 }
 

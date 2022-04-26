@@ -16,7 +16,7 @@ public:
 
 	void push_back(t);
 	void pop_back();
-	t back();
+	t& back();
 	t& operator[](int);
 	int size();
 	int capacity();
