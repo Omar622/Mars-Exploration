@@ -4,14 +4,14 @@
 
 template<class t>
 class vector{
-	int* arr;
+	t* arr;
 	int siz, cap;
 
 public:
-	vector();
-	vector(int);
-	vector(int, t);
-	vector(vector<t>&);
+	vector(); // empty constructor
+	vector(int); // paramterized constructor
+	vector(int, t); // paramterized constructor
+	vector(vector<t>&); // copy constructor
 	~vector();
 
 	void push_back(t);
@@ -20,6 +20,7 @@ public:
 	t& operator[](int);
 	int size();
 	int capacity();
+	bool empty();
 	void clear();
 };
 

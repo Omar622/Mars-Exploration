@@ -1,18 +1,18 @@
 #include "vector.h"
 
 template<class t>
-vector<t>::vector(){
+vector<t>::vector(){ // empty constructor
 	siz = cap = 0;
 }
 
 template<class t>
-vector<t>::vector(int n){
-	arr = new int[n];
+vector<t>::vector(int n){  // paramterized constructor
+	arr = new t[n];
 	siz = cap = n;
 }
 
 template<class t>
-vector<t>::vector(int n, t val):vector(n){
+vector<t>::vector(int n, t val):vector(n){ // paramterized constructor
 	for(int i = 0; i < n; ++i)
 		arr[i] = val;
 }
@@ -32,12 +32,12 @@ vector<t>::~vector(){
 
 template<class t>
 void vector<t>::push_back(t val){
-	if(siz == 0){
-		arr = new int[1];
+	if(cap == 0){
+		arr = new t[1];
 		siz = cap = 1;
 		arr[0] = val;
 	}else if(siz == cap){
-		int* temp = new int[2*cap];
+		t* temp = new t[2*cap];
 		for(int i = 0; i < siz; ++i){
 			temp[i] = arr[i];
 		}
@@ -91,6 +91,12 @@ template<class t>
 int vector<t>::capacity(){
 	return cap;
 }
+
+template<class t>
+bool vector<t>::empty(){
+	return siz == 0;
+}
+
 
 template<class t>
 void vector<t>::clear(){

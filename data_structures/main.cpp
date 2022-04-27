@@ -1,35 +1,31 @@
 #include<iostream>
 #include"vector.h"
+#include"queue.h"
 
 //using namespace std;
 
-void print(vector<int>& v){
-	std::cout << v.size() << " " << v.capacity() << "\n";
-	for(int i = 0; i < v.size(); ++i){
-		std::cout << v[i] << " ";
+void print(queue<int>& q){
+	while(!q.empty()){
+		std::cout << q.front() << " ";
+		q.pop();
 	}
+	
 	std::cout << "\n";
 }
 
 int main(){
 
-	vector<int> v;
-	print(v);
-	v.push_back(12);
-	print(v);
-	v.pop_back();
-	print(v);
-	v.push_back(24);
-	v.push_back(1);
-	v.push_back(33);
-	v.push_back(3);
-	v.push_back(4);
-	print(v);
-	v.pop_back();
-	print(v);
-	std::cout << v.back() << "\n";
-	v.clear();
-	print(v);
+	queue<int> q;
+	q.push(4);
+	q.push(5);
+	q.push(3);
+	// std::cout << q.front() << " ";
+	
+	print(q);
+	print(q);
+
+	// std::cout << q.front() << " ";
+
 
 	return 0;
 }
